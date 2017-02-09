@@ -1,0 +1,138 @@
+/*初始化元素*/
+body{
+	background-color:#eee;
+}
+
+.container{
+	position: relative;
+	
+	width: 960px;
+	height: 450px;
+	margin: 50px auto;
+}
+img{
+	width: 200px;
+	height: 200px;
+}
+h1{
+	text-align: center;
+	font-weight: bold;
+	color: indigo;
+}
+
+/*定义每张图片基本样式*/
+.container img{
+	position: absolute;
+	z-index: 1;
+	padding: 10px 10px 15px;
+	border: 2px solid #ddd;
+	background: white;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+
+	-webkit-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+}
+
+
+.container img:hover{
+	z-index: 2;
+	box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.8);
+	
+	-webkit-transform: rotate(0deg) scale(1.20);
+	-ms-transform: rotate(0deg) scale(1.20);
+	-o-transform: rotate(0deg) scale(1.20);
+	transform: rotate(0deg) scale(1.20);
+}
+
+/*初始化每张图片的位置*/
+.pic1{
+	top: 400px;
+	left: 0;
+	-webkit-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+
+.pic2{
+	top: 0;
+	left: 600px;
+	-webkit-transform: rotate(-20deg);
+	-ms-transform: rotate(-20deg);
+	-o-transform: rotate(-20deg);
+	transform: rotate(-20deg);
+}
+
+.pic3{
+	right: 0;
+	bottom: 0;
+	-webkit-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	-o-transform: rotate(5deg);
+	transform: rotate(5deg);
+}
+
+.pic4{
+	bottom: 0;
+	left: 300px;
+	-webkit-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+.pic5{
+	bottom: 0;
+	left: 0;
+	-webkit-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+.pic6{
+	top: 0;
+	left: 0;
+	-webkit-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	transform: rotate(10deg);
+}
+
+.pic7{
+	top: 0;
+	left: 850px;
+	-webkit-transform: rotate(20deg);
+	-ms-transform: rotate(20deg);
+	-o-transform: rotate(20deg);
+	transform: rotate(20deg);
+}
+
+.pic8{
+	right: 230px;
+	bottom: 630px;
+	-webkit-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	-o-transform: rotate(5deg);
+	transform: rotate(5deg);
+}
+
+.pic9{
+	top: 90px;
+	left: 550px;
+	-webkit-transform: rotate(15deg);
+	-ms-transform: rotate(15deg);
+	-o-transform: rotate(15deg);
+	transform: rotate(15deg);
+}
+
+.pic10{
+	top: 20px;
+	left: 180px;
+	-webkit-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+

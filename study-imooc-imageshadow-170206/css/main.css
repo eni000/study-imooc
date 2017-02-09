@@ -1,0 +1,137 @@
+/*初始化样式*/
+body{ font-family: Arial;
+font-size: 23px; }
+/*shadow h3 start*/
+.wrap{
+	width: 70%;
+	height: 200px;
+	background: #fff;
+	margin: 40px auto;
+}
+.wrap h3{
+	text-align: center;
+	position: relative;
+	top: 80px
+}
+
+	/*1.添加一个内直角阴影，和内阴影*/
+.effect{
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) , 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) , 0 0 40px rgba(0, 0, 0, 0.1) inset ;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) , 0 0 40px rgba(0, 0, 0, 0.1) inset ;
+}
+
+.effect:before, .effect:after{
+	content: "";
+	position: absolute;
+
+/*	利用定位四个点，让浏览器算出盒子的尺寸*/
+	top:50%;
+	right: 10px;
+	bottom: 0;
+	left: 10px;
+	z-index: -1;
+
+	-webkit-border-radius: 100px / 10px;;
+	-moz-border-radius: 100px / 10px;;
+	border-radius: 100px / 10px;
+
+	-webkit-box-shadow:0 0 20px rgba(0, 0, 0, 0.8) ;
+	-moz-box-shadow:0 0 20px rgba(0, 0, 0, 0.8) ;
+	box-shadow:0 0 20px rgba(0, 0 ,0, 0.8) ;
+
+	
+}	
+
+/*shadow h3 end*/
+
+	/*初始化ul元素*/
+	.box{
+		width: 980px;
+		height: auto;
+		margin: 20px auto;
+		padding: 0;
+		clear: both;
+		overflow: hidden;
+	}
+
+	/*初始化img标签*/
+	.box li img{
+		
+		width: 290px;
+		height: 210px;
+		padding: 5px;
+	}
+
+	
+	.box li{
+		position: relative;
+	
+		float: left;
+		list-style: none;
+		
+		margin: 20px 10px;
+		padding: 0;
+		width: 300px;
+		height: 220px;
+		border: 2px solid #efefef;
+		background: #ffffff;	
+		text-align: center; /*可以让行内样式居中*/
+		-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+		-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+		-o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+	}
+
+	/*分别在li元素前后加1个带阴影的平行四边形元素*/
+
+	.box li:before{
+		content: "";
+		position: absolute;
+		left: 20px;
+		bottom: 8px;
+		z-index: -1;
+		
+		width: 89%;
+		height: 80%;
+
+		background: transparent;
+
+		/*利用transform得到平行四边形*/
+		-webkit-transform: skew(-12deg) rotate(-4deg);
+		-ms-transform: skew(-12deg) rotate(-4deg);
+		-o-transform: skew(-12deg) rotate(-4deg);
+		transform: skew(-12deg) rotate(-4deg);
+		
+		-webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+		-moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+		-o-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+	}
+
+	.box li:after{
+		content: "";
+		position: absolute;
+		right: 20px;
+		bottom: 8px;
+		z-index: -2;
+		
+		width: 89%;
+		height: 80%;
+
+		background: transparent;
+
+		/*利用transform得到平行四边形*/
+		-webkit-transform: skew(12deg) rotate(4deg);
+		-ms-transform: skew(12deg) rotate(4deg);
+		-o-transform: skew(12deg) rotate(4deg);
+		transform: skew(12deg) rotate(4deg);
+		
+		-webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+		-moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+		-o-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+	}
+
+	
