@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js实现倒计时</title>
+	<style>
+		/*搭建背景样式*/
+			body{
+				margin: 0;
+				padding-top: 20%;
+				background-color: #e74c3c;
+			}
+			.container{
+				height: 100%;
+				text-align: center;
+				font-weight: bold;
+				font-size: 20px;
+
+				color: white;				
+			}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 id="show">我是一个倒计时</h1>
+	</div>
+	<script>
+		window.onload = function(){
+
+
+			function FreshTime(){
+				// 设置开始结束时间差
+			var endTime = new Date("2018/5/15,12:20:12")
+			var nowTime = new Date();
+			var leftTime = parseInt((endTime.getTime() -nowTime.getTime())/1000);
+
+			// 转换成天时分秒
+			d=parseInt(leftTime/3600/24);
+			h=parseInt((leftTime/3600)%24);
+			m=parseInt((leftTime/60)%60);
+			s=parseInt(leftTime%60);
+		// 输出
+
+			document.getElementById("show").innerHTML = d + "天" + h +"小时" + m + "分" + s + "秒";
+
+			if(leftTime<=0){
+				document.getElementById("show").innerHTML = "时间结束";
+			clearInterval(sh);
+			}
+			else{
+				document.getElementById("show").innerHTML = d + "天" + h + "小时"+ m + "分" + s + "秒";
+			}
+		}
+
+		// 这里可以不定义sh，sh的作用是用来当做参数传给clearInterval()
+
+		FreshTime()
+		var sh;
+		sh=setInterval(FreshTime,1000);
+}
+	</script>
+</body>
+</html>

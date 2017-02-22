@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	
+	<style>
+	/*搭建背景样式*/
+		body{
+			margin: 0;
+			padding-top: 20%;
+			background-color: #e74c3c;
+		}
+		.container{
+			height: 100%;
+			text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+
+			color: white;				
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 id="show">距离一个时间还有很多天</h1>
+	</div>
+	<script>
+	  window.onload = function(){
+	  		// 定义未来的时间
+		　　var futureDate= new Date("12,12,2017");       
+			// 获取现在的时间
+		　　var now = new Date();    
+			// 时间差
+		　　var dateGap = futureDate.getTime() - now.getTime();    //得出的为毫秒
+		　　var time = Math.ceil(dateGap/(1000 * 60 * 60 * 24));  
+		    //1000 * 60 * 60 * 24一天的秒数
+		    if(time > 0 ){
+			  document.getElementById("show").innerHTML = "距离2018年还差"+time+"天！";
+			}
+			else{
+				document.getElementById("show").innerHTML = "兄弟睡过头了吧！";
+			}
+
+	    }
+	</script>
+</body>
+</html>

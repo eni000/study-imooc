@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js显示现在的时间</title>
+	<style>
+		/*搭建背景样式*/
+		body{
+			margin: 0;
+			padding-top: 20%;
+			background-color: #e74c3c;
+		}
+		.container{
+			height: 100%;
+			text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+
+			color: white;				
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 id="show">显示时间的位置</h1>
+	</div>
+<script>
+
+window.onload =function(){
+		// 这个里面写函数
+	showTime();
+	
+}
+
+// 定义函数区域
+//2.补零函数
+	function checkTime(i)
+	{
+	if (i<10) 
+	  {i="0" + i;}
+	  return i;
+	}
+//1.定义一个显示时间的函数
+	
+	function showTime(){
+		// 获取现在的时间
+		var now = new Date();
+		// 分别取得年月日
+		var year = now.getFullYear();
+		var month = now.getMonth()+1;
+		var day =  now.getDate();
+		// 分别取得时分秒
+		var h = now.getHours();
+		var m = now.getMinutes();
+		var s = now.getSeconds();
+		// 补零
+		m=checkTime(m);
+		s=checkTime(s);
+
+		// 定义一个数组来表示周末七天
+		var weekday= new Array(7)
+		weekday[0]="星期日"
+		weekday[1]="星期一"
+		weekday[2]="星期二"
+		weekday[3]="星期三"
+		weekday[4]="星期四"
+		weekday[5]="星期五"
+		weekday[6]="星期六"
+
+		// 显示时间
+		document.getElementById("show").innerHTML=""+year+"年"+month+"月"+day+"日 "+weekday[now.getDay()]+h+":"+m+":"+s;
+		t=setTimeout('showTime()',500)
+	}
+
+</script>
+</body>
+</html>
